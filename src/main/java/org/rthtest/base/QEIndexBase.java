@@ -1,6 +1,8 @@
 package org.rthtest.base;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -20,9 +22,20 @@ public class QEIndexBase {
       //  driver.get(usr_dir + "\\src\\main\\java\\org\\rthtest\\question\\QE-index.html");
     }
 
-    public static void initialization() {
-        System.setProperty("webdriver.gecko.driver", "D:\\LEARNING\\QA\\Test Engineering\\SeleniumJars\\geckodriver.exe");
-        driver = new FirefoxDriver();
+    public static void initialization(String browser) {
+
+        if(browser.equalsIgnoreCase("firefox")) {
+            driver = new FirefoxDriver();
+        }
+        else if(browser.equalsIgnoreCase("chrome")) {
+            driver = new ChromeDriver();
+        }
+        else if(browser.equalsIgnoreCase("edge")) {
+            driver = new EdgeDriver();
+        }
+        else {
+            throw new IllegalArgumentException("Invalid browser value!!");
+        }
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
