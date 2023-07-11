@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Resolver Take Home Automation Test Suite" parallel="false">
+    <test name="Resolver QE Index Test Cases">
+        <classes>
+            <class name="org.rthtest.testcases.QEIndexTest">
+                <methods>
+                    <include name="Test2"/>
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
