@@ -5,7 +5,12 @@
         <classes>
             <class name="org.rthtest.testcases.QEIndexTest">
                 <methods>
+                    <include name="Test1"/>
+                    <include name="Test2"/>
+                    <include name="Test3"/>
                     <include name="Test4"/>
+                    <include name="Test5"/>
+                    <include name="Test6"/>
                 </methods>
             </class>
         </classes>

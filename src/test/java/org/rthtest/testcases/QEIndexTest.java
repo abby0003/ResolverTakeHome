@@ -61,7 +61,24 @@ public class QEIndexTest extends QEIndexBase {
         Assert.assertFalse(qeIndexPage.checkSecondButtonTest4(),
                 "Second button is is not disabled");
     }
-    @AfterMethod
+
+    @Test
+    public void Test5() {
+        qeIndexPage.clickButtonTest5();
+        Assert.assertEquals(qeIndexPage.getSuccessMessageTest5(),"You clicked a button!",
+                "Success message is not displayed after clicking Test 5 button");
+        Assert.assertFalse(qeIndexPage.checkButtonStatusTest5(),
+                "Test5 button is not disabled");
+
+    }
+
+    @Test
+    public void Test6() {
+        Assert.assertEquals(qeIndexPage.getGridDataCellValuePosition(2,2),"Ventosanzap",
+                "The grid data at position 2,2 is not Ventosanzap");
+
+    }
+        @AfterMethod
     public void tearDown() {
         closeDriver();
     }

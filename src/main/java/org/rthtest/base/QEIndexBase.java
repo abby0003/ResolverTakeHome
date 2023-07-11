@@ -17,7 +17,6 @@ public class QEIndexBase {
 
 
         usr_dir = System.getProperty("user.dir").toString();
-        //System.out.println(usr_dir);
       //  driver.get(usr_dir + "\\src\\main\\java\\org\\rthtest\\question\\QE-index.html");
     }
 
