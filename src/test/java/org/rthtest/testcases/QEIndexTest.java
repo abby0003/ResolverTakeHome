@@ -44,6 +44,23 @@ public class QEIndexTest extends QEIndexBase {
                 "Second list item badge value is not equal to 6");
     }
 
+    @Test
+    public void Test3() {
+        Assert.assertEquals(qeIndexPage.getSelectedValueFromDropDown(),"Option 1",
+               "Default select value is not Option 1");
+        qeIndexPage.clickOnDropDownButton();
+        qeIndexPage.selectOptionPosition(2);
+        Assert.assertEquals(qeIndexPage.getSelectedValueFromDropDown(),"Option 3",
+                "Selected value is not Option 3");
+    }
+
+    @Test
+    public void Test4() {
+        Assert.assertTrue(qeIndexPage.checkFirstButtonTest4(),
+                "First button is not enabled");
+        Assert.assertFalse(qeIndexPage.checkSecondButtonTest4(),
+                "Second button is is not disabled");
+    }
     @AfterMethod
     public void tearDown() {
         closeDriver();

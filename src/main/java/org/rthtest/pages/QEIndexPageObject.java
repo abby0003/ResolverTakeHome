@@ -26,6 +26,14 @@ public class QEIndexPageObject extends QEIndexBase {
     @FindBy(xpath = "//ul[@class = 'list-group']/li/span")
     List<WebElement> listItemBadges;
 
+    @FindBy(id = "dropdownMenuButton")
+    WebElement dropDownButton;
+
+    @FindBy(className = "dropdown-item")
+    List<WebElement> dropDownOptions;
+
+    @FindBy(xpath = "//div[@id = 'test-4-div']/button")
+    List<WebElement> test4Buttons;
     //----------------------------------------
 
     public QEIndexPageObject() {
@@ -77,4 +85,24 @@ public class QEIndexPageObject extends QEIndexBase {
         return listItemBadges.get(pos).getText();
     }
 
+    public String getSelectedValueFromDropDown() {
+        //System.out.println(dropDownButton.getText());
+        return dropDownButton.getText();
+    }
+
+    public void clickOnDropDownButton() {
+        dropDownButton.click();
+    }
+
+    public void selectOptionPosition(int pos) {
+        dropDownOptions.get(pos).click();
+    }
+
+    public boolean checkFirstButtonTest4() {
+        return test4Buttons.get(0).isEnabled();
+    }
+
+    public boolean checkSecondButtonTest4() {
+        return test4Buttons.get(1).isEnabled();
+    }
 }
